@@ -8,7 +8,7 @@ class HourEntry(models.Model):
     task = models.CharField(max_length=30)
     notes = models.TextField(max_length=4)
     pub_date = models.DateField('Date Worked')
-    hours = models.CharField(max_length=10)
+    hours = models.DecimalField(max_digits=5, decimal_places=2)
     cost = models.IntegerField(default=0)
     billable = models.BooleanField(default=False)
     billed = models.BooleanField(default=False)
