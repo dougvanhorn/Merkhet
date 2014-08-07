@@ -1,0 +1,29 @@
+# =============================================================================
+# Django Related Requirements
+# -----------------------------------------------------------------------------
+# Django 1.7 (Release Candidate 2)
+git+ssh://git@github.com/django/django.git@1.7c2#egg=django-1.7c2
+#Django==1.7
+
+# Localflavor.
+django-localflavor==1.0
+
+# Bootstrap Support.
+django-bootstrap3==4.8.2
+# -----------------------------------------------------------------------------
+
+pytz==2014.4
+
+# Ubuntu system libraries to build:
+# sudo apt-get install python3-dev python3-setuptools
+# libjpeg-dev
+# libopenjpeg-dev (Not v2 of OpenJPEG on Ubuntu, so won't compile this feature).
+# libfreetype6-dev
+# libwebp-dev
+# liblcms2-dev
+# libtiff4-dev
+# libtiff5-dev
+# zlib1g-dev
+# python3-tk tcl8.6-dev tk8.6-dev
+Pillow==2.5.1
+
