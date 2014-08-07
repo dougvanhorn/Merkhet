@@ -1,6 +1,9 @@
-# Virtual Environments
+# Virtual Environments.
 ve/
 
+
+# SQLite databases.
+*.sqlite3
 
 
 # Python Compiled files and such.

@@ -164,5 +164,54 @@ have.
 $ ./manage.py startapp merkhet
 ```
 
-This creates a new directory `merkhat` with just about the same things you
+This creates a new directory `merkhet` with just about the same things you
 already have.  
+
+I merged your code into the `merket` app, made a few changes, and added a bunch
+of comments.  Go ahead and review those.  Note your questions, and we can
+discuss.
+
+Once you have the app installed and some models written, you need to build your
+"migrations".  Migrations are code that define your database models and how to
+create them.  They will track changes to your models and automatically create
+the SQL necessary to modify your database to accommodate your new models.
+
+For example, say, 3 months from now, we decide that Project needs a new field
+called `manager`.  We can add that in Django pretty easily, but we would also
+need to modify our database, adding a new column to the merkhet\_project table.
+Migrations help us with the process.
+
+`South` used to be the third-party application you would install to get
+migration functionality.  Django 1.7 has added migrations to the core
+application, so you no longer need to install South.  However, you might
+encounter South if you ever work on an older Django project, so it's good to
+know it exists.  Note that South was pretty much merged into Django, so they're
+basically the same thing.
+
+So, to create your migrations for `merkhet`, you would:
+
+```bash
+$ ./manage.py makemigrations merkhet
+```
+
+Then, to create your database (this is a little different in 1.7):
+
+```bash
+$ ./manage.py migrate
+```
+
+And where `syncdb` used to create a superuser for you, now you do it manually:
+
+```bash
+$ ./manage.py createsuperuser
+```
+
+
+### Run the application
+
+Now that all that is done, we need to run the application:
+
+```bash
+$ ./manage.py runserver
+```
+

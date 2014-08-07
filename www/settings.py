@@ -39,6 +39,14 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third party applications.
+    # -------------------------------------------------------------------------
+    'bootstrap3',
+
+    # Our applications.
+    # -------------------------------------------------------------------------
+    'merkhet',
 )
 
 MIDDLEWARE_CLASSES = (
