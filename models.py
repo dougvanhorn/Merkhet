@@ -3,18 +3,20 @@ from django.db import models
 
 
 class Project(models.Model):
-    name = models.CharField(max_length=60)
+    project = models.CharField(max_length=60)
     def __unicode__(self):  
-        return self.name
+        return self.project
     class Meta:
 	verbose_name_plural = "Projects"
+	ordering = ('project',)
 
 class Task(models.Model):
-    name = models.CharField(max_length=60)
+    task = models.CharField(max_length=60)
     def __unicode__(self):  
-        return self.name
+        return self.task
     class Meta:
 	verbose_name_plural = "Tasks"
+        ordering = ('task',)
 
 class HourEntry(models.Model):
     
@@ -29,6 +31,7 @@ class HourEntry(models.Model):
     billed = models.BooleanField(default=False)
     class Meta:
     	verbose_name_plural = "Hour Entries"
+        
        
 
 
