@@ -1,2 +1,8 @@
 # Virtual Environments
 ve/
+
+
+
+# Python Compiled files and such.
+__pycache__
+*.pyc

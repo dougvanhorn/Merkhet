@@ -124,12 +124,45 @@ for it.
 ### Project (re)Organization
 
 Now, let's dig into the project sturcture itself.  There are lots of different
-ways to do it, and there is no "right" way.  I'm going to set this one up how I
-like it.  You can read up on all the other ways and decide for yourself how you
-like it.
+ways to do it, and there is no "right" way.  I'm going to set this one up for
+simplicity.  There are other approaches that are better suited to larger
+projects.  You can read up on all the other ways and decide for yourself how
+you like it.
+
 
 #### Project Directory
+
+Looking at what's checked in, it looks like you've only checked in the `app`,
+and not the project (named MerkhetMarket?).  So I'm going to initialize a
+Django project called www.  It will define the "website".
+
+```bash
+$ django-admin.py startproject www
+```
+
+Because of the way this command works, I moved some directories around, so we
+end up with a `manage.py` file in the project root and a `www` module at the
+root level.
+
+Now, the idea behind the Django project is that it defines the collection of
+applications and URLs that make up the functionality of this site.  We'll put
+the functionality of the site into an app.
+
+I've left the new settings.py file pointing at a local SQLite3 database.
+That's good enough for now and will keep things simple while we get up and
+running.
 
 
 #### Applications
 
+So, you've already defined the app and some of it's functionality.  We'll start
+an app using a management command and merge/replace it files with what you
+have.
+
+
+```bash
+$ ./manage.py startapp merkhet
+```
+
+This creates a new directory `merkhat` with just about the same things you
+already have.  
