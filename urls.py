@@ -10,7 +10,7 @@ from django.contrib.auth.models import User, Group
 from django.contrib import admin
 admin.autodiscover()
 admin.site.unregister(Group)
-admin.site.unregister(User)
+
 
 
 #------------------------------------------------------------------#
